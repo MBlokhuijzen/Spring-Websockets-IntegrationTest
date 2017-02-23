@@ -22,7 +22,7 @@ public class GameController {
 
     @MessageMapping("/create/{uuid}")
     @SendTo("/topic/board/{uuid}")
-    public GameState createGame(@DestinationVariable String uuid) throws IllegalArgumentException {
+    public GameState createGame(@DestinationVariable String uuid) {
         GameState gameState = gameService.createGame(UUID.fromString(uuid));
 
         return gameState;
@@ -30,7 +30,7 @@ public class GameController {
 
     @MessageMapping("/move/{uuid}")
     @SendTo("/topic/move/{uuid}")
-    public GameState makeMove(@DestinationVariable String uuid, Move move) throws IllegalArgumentException {
+    public GameState makeMove(@DestinationVariable String uuid, Move move) {
         GameState gameState = gameService.move(UUID.fromString(uuid), move);
 
         return gameState;

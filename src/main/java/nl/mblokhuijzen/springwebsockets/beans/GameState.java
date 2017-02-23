@@ -9,6 +9,10 @@ public class GameState implements Serializable {
     private int whosTurn;
     private boolean gameOver;
 
+    public GameState() {
+
+    }
+
     public GameState(UUID gameUUID, int[][] board, int whosTurn, boolean gameOver) {
         this.gameUUID = gameUUID;
         this.board = board;

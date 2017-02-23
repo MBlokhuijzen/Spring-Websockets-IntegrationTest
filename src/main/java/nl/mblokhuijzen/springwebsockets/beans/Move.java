@@ -6,6 +6,10 @@ public class Move implements Serializable {
     private int player;
     private int position;
 
+    public Move() {
+
+    }
+
     public Move(int player, int position) {
         this.player = player;
         this.position = position;

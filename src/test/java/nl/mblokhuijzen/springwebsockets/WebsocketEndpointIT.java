@@ -66,7 +66,7 @@ public class WebsocketEndpointIT {
         stompSession.send(SEND_CREATE_BOARD_ENDPOINT + uuid, null);
 
         GameState gameState = completableFuture.get(10, SECONDS);
-
+        System.out.println(gameState);
         assertNotNull(gameState);
     }
 
