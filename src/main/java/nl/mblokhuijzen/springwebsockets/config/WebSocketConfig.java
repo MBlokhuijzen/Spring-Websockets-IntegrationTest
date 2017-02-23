@@ -24,12 +24,4 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
         stompEndpointRegistry.addEndpoint("/game").withSockJS();
     }
-
-    @Override
-    public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
-        messageConverters.add(new StringMessageConverter());
-        messageConverters.add(new ByteArrayMessageConverter());
-
-        return true;
-    }
 }
